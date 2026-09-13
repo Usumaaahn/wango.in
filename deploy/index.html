@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ext-resource-dependency" content="./assets/dish-tres-leches.jpg" data-resource-id="photoDes4">
+<meta name="ext-resource-dependency" content="./assets/dish-tiramisu.jpg" data-resource-id="photoDes1">
+<meta name="ext-resource-dependency" content="./assets/dish-quesadilla.jpg" data-resource-id="photoApp2">
+<meta name="ext-resource-dependency" content="./assets/dish-momos.jpg" data-resource-id="photoApp8">
+<meta name="ext-resource-dependency" content="./assets/dish-jackmanco.jpg" data-resource-id="photoSh1">
+<meta name="ext-resource-dependency" content="./assets/dish-mango-sago.jpg" data-resource-id="photoTt1">
+<meta name="ext-resource-dependency" content="./assets/dish-cheesecake.png" data-resource-id="photoDes6">
+<meta name="ext-resource-dependency" content="./assets/dish-sticky-rice.png" data-resource-id="photoDes3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+  html { overflow-x:clip; }
+  body { margin:0; width:100%; max-width:100%; background:#016E5B; background-image:linear-gradient(168deg,#016E5B 0%,#014A3D 60%,#013127 100%); background-attachment:fixed; color:#12211C; font-family:'Plus Jakarta Sans',system-ui,sans-serif; -webkit-font-smoothing:antialiased; overflow-x:clip; }
+  * { box-sizing:border-box; }
+  a { color:#FFD626; text-decoration:none; }
+  a:hover { color:#FFA717; }
+  input, button, textarea { font-family:inherit; }
+  ::-webkit-scrollbar { height:6px; width:6px; }
+  ::-webkit-scrollbar-thumb { background:rgba(255,255,255,.28); border-radius:99px; }
+  @keyframes wgPop { 0%{transform:scale(.6);opacity:0} 60%{transform:scale(1.15)} 100%{transform:scale(1);opacity:1} }
+  @keyframes wgRise { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:none} }
+  @keyframes wgMarquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  @keyframes wgFloatA { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(28px,-34px) scale(1.08)} }
+  @keyframes wgFloatB { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-30px,26px) scale(1.1)} }
+  @keyframes wgSpin { to{transform:rotate(360deg)} }
+  .wg-tilt { transition:transform .15s cubic-bezier(.2,.9,.3,1),box-shadow .22s ease; transform-style:preserve-3d; will-change:transform; }
+  .wg-marquee-track { display:flex; width:max-content; animation:wgMarquee 32s linear infinite; }
+  .wg-reveal { opacity:0; transform:translateY(30px); transition:opacity .75s cubic-bezier(.2,.8,.2,1), transform .75s cubic-bezier(.2,.8,.2,1); }
+  .wg-reveal.wg-in { opacity:1; transform:none; }
+  @media (prefers-reduced-motion:reduce){ .wg-marquee-track{animation:none} .wg-tilt{transition:none} .wg-reveal{opacity:1;transform:none;transition:none} }
+</style>
+</helmet>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#016E5B"></rect><g transform="translate(50,52)"><path d="M0 -22 C 16 -22 24 -8 20 8 C 16 22 4 26 -4 24 C -18 20 -22 2 -16 -10 C -12 -18 -6 -22 0 -22 Z" fill="#FFD626"></path><path d="M2 -20 C 8 -14 8 6 -2 22 C 6 24 16 20 20 8 C 24 -8 16 -22 0 -22 C 1 -21 1 -20 2 -20 Z" fill="#FFA717"></path><path d="M0 -22 C 2 -30 10 -32 14 -30 C 8 -28 6 -24 4 -21 C 2 -22 1 -22 0 -22 Z" fill="#7EA139"></path></g></svg></template>
+<div style="min-height: 100vh; padding-bottom: 96px; position: relative">
+
+  <div style="position:relative;z-index:1;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 18px;padding:9px 18px;background:linear-gradient(90deg,#FFD626,#FFA717);color:#5A3800;text-align:center;font-size:12.5px;font-weight:700;letter-spacing:.02em">
+  <div style="position:relative;z-index:1;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 18px;padding:9px 18px;background:linear-gradient(90deg,#FFD626,#FFA717);color:#5A3800;text-align:center;font-size:12.5px;font-weight:700;letter-spacing:.02em">
+    
+  <span style="display:inline-flex;align-items:center;gap:6px">✦ India’s First Mango Themed Café</span></div>
+  </div>
+
+  <sc-if value="{{ kitchenClosed }}" hint-placeholder-val="{{ false }}">
+    <div style="position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:10px;padding:12px 18px;background:#B3261E;color:#fff;text-align:center;font-size:13.5px;font-weight:700;letter-spacing:.01em">
+      <span style="width:8px;height:8px;border-radius:50%;background:#FFD626;box-shadow:0 0 0 4px rgba(255,214,38,.3)"></span>
+      Kitchen closed — back soon. Ordering is paused.
+    </div>
+  </sc-if>
+
+  <div aria-hidden="true" style="position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden">
+    <div style="position:absolute;top:-160px;right:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(255,167,23,.5),rgba(255,167,23,0) 70%);filter:blur(20px);animation:wgFloatA 18s ease-in-out infinite"></div>
+    <div style="position:absolute;bottom:-180px;left:-140px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle at 40% 40%,rgba(126,161,57,.45),rgba(126,161,57,0) 70%);filter:blur(20px);animation:wgFloatB 22s ease-in-out infinite"></div>
+    <div style="position:absolute;top:38%;left:44%;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(255,214,38,.36),rgba(255,214,38,0) 70%);filter:blur(16px);animation:wgFloatA 26s ease-in-out infinite"></div>
+  </div>
+
+  <header style="position:sticky;top:0;z-index:60;background:linear-gradient(180deg,rgba(251,247,240,.92),rgba(251,247,240,.72));backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);border-bottom:1px solid rgba(255,255,255,.6);box-shadow:0 6px 24px -12px rgba(18,33,28,.28)">
+    <div style="max-width:1180px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:20px">
+      <div style="display:flex;align-items:center;gap:11px;margin-right:auto">
+        <img onClick="{{ logoTap }}" src="./assets/WANGO.jpg" alt="Wango — The Mango Club" style="width:44px;height:44px;border-radius:12px;object-fit:cover;box-shadow:0 4px 12px -4px rgba(14,102,85,.5)">
+        <div style="line-height:1.05">
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:17px;letter-spacing:-.02em">Wango</div>
+          <div style="font-size:10px;letter-spacing:.14em;color:#7A8A82;font-weight:600">THE MANGO CLUB</div>
+        </div>
+      </div>
+      <div class="wg-hide-sm" style="display:flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:rgba(111,160,46,.12);color:#4C7A18;font-size:12.5px;font-weight:600">
+        <span style="width:7px;height:7px;border-radius:50%;background:#7EA139;box-shadow:0 0 0 4px rgba(111,160,46,.2)"></span>Open till 11:30 PM
+      </div>
+      <button onClick="{{ openCart }}" style="display:flex;align-items:center;gap:9px;background:#12211C;color:#FBF7F0;border:none;padding:11px 18px;border-radius:999px;font-weight:600;font-size:14px;cursor:pointer;transition:transform .18s ease,background .18s ease" style-hover="background:#016E5B;transform:translateY(-1px)">
+        Cart
+        <span style="min-width:22px;height:22px;padding:0 6px;border-radius:999px;background:#FFA717;color:#12211C;font-weight:700;font-size:12px;display:grid;place-items:center">{{ count }}</span>
+      </button>
+    </div>
+  </header>
+
+  
+
+  <section style="max-width: 1180px; margin: 0 auto; padding: 44px 20px 8px; display: flex; flex-wrap: wrap; gap: 36px; align-items: center; position: relative">
+    
+    <div data-reveal="" style="flex:2 1 380px;min-width:300px">
+      <div style="display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.1em;color:#FFD626">INDIA’S FIRST MANGO CAFÉ</div><h1 style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(38px,6vw,68px);line-height:.96;letter-spacing:-.035em;margin:14px 0 0;color:#F5F9EF">Mango magic,<br>in every bite.</h1>
+      <p data-pm-slice="1 1 []" style="font-size:22px;margin:14px 0 0;font-weight:700;font-family:'Bricolage Grotesque',sans-serif;color:#FFD626">365 days of pure mango, all year round.</p>
+      
+      <div style="margin:18px 0 0;max-width:46ch;font-size:17px;line-height:1.55;color:rgba(243,247,236,.85)"><p style="margin:0">Carbide-free, naturally ripened mangoes — made fresh the moment you order.</p></div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:24px">
+        <button onClick="{{ jumpMenu }}" style="background: linear-gradient(135deg,#FFD626,#FFA717 55%,#F08A00); color: #12211C; border: none; padding: 15px 26px; border-radius: 999px; font-weight: 700; font-size: 15px; cursor: pointer; box-shadow: 0 14px 30px -8px rgba(232,133,12,.5); transition: transform .18s ease,box-shadow .18s ease; width: 181px; height: 59px" style-hover="transform:translateY(-2px);box-shadow:0 20px 38px -8px rgba(232,133,12,.6)">Start your order</button>
+        <a href="tel:+918792633425" style="padding: 15px 24px; border-radius: 999px; border: 1.5px solid rgba(255,255,255,.32); font-weight: 600; font-size: 15px; color: #F5F9EF; transition: border-color .18s ease; height: 59px; display: inline-flex; align-items: center; justify-content: center; width: 178px" style-hover="border-color:#FFD626;color:#FFD626">Call the kitchen</a>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:28px;margin-top:30px">
+        <div><div style="font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:700;color:#FFD626">25–35 min</div><div style="font-size:12.5px;color:rgba(243,247,236,.72)">typical prep time</div></div>
+        <div><div style="font-family:'Bricolage Grotesque',sans-serif;font-size:22px;font-weight:700;color:#FFD626">4.9 ★</div><div style="font-size:12.5px;color:rgba(243,247,236,.72)">loved on Google</div></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:28px;max-width:520px;perspective:1100px">
+        <div onMouseMove="{{ tiltMove }}" onMouseLeave="{{ tiltLeave }}" class="wg-tilt" style="position:relative;display:flex;flex-direction:column;gap:9px;background:linear-gradient(150deg,rgba(255,255,255,.18),rgba(255,214,38,.14) 55%,rgba(255,255,255,.04));backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:17px 19px;box-shadow:0 20px 44px -22px rgba(232,133,12,.55),inset 0 1px 0 rgba(255,255,255,.45);overflow:hidden">
+          <div aria-hidden="true" style="position:absolute;top:-40px;right:-30px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(255,214,38,.42),transparent 70%);pointer-events:none"></div>
+          <div style="display:flex;align-items:center;gap:11px"><span style="flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:linear-gradient(140deg,#FFD626,#F08A00);box-shadow:0 8px 18px -8px rgba(232,133,12,.7),inset 0 1px 0 rgba(255,255,255,.55)"><svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M18.6 8.1c1.6 2.9.9 6.7-1.9 9.2-2.9 2.6-6.9 3.2-9.9 1.6-2.1-1.1-3.2-3.3-2.8-5.7.5-3.1 3-6 6.2-7.1 2.7-.9 5.4-.3 7 .9-1.6.2-3 .9-3.9 2" stroke="#12211C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path><path d="M15.5 6.2c.9-1.6 2.6-2.5 4.3-2.4-.1 1.7-1 3.3-2.5 4.1" stroke="#12211C" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><span style="font-weight:700;font-size:15px;color:#F5F9EF;font-family:'Bricolage Grotesque',sans-serif">Fresh whole mangoes, in season</span></div>
+          <div style="font-size:13.5px;line-height:1.5;color:rgba(243,247,236,.85)">Sales depend on availability and the season — call us directly to check stock and order.</div>
+          <a href="tel:+918792633425" style="align-self:flex-start;margin-top:2px;display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,#FFD626,#FFA717 55%,#F08A00);color:#12211C;padding:9px 17px;border-radius:999px;font-weight:700;font-size:13px;box-shadow:0 10px 22px -8px rgba(232,133,12,.6);transition:transform .18s ease" style-hover="transform:translateY(-2px)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .5 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.5-1 1-1h3.4c.6 0 1 .5 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1l-2.2 2.3Z" fill="#12211C"></path></svg>Call to order</a>
+        </div>
+        <div onMouseMove="{{ tiltMove }}" onMouseLeave="{{ tiltLeave }}" class="wg-tilt" style="position:relative;display:flex;flex-direction:column;gap:9px;background:linear-gradient(150deg,rgba(255,255,255,.16),rgba(1,110,91,.24) 55%,rgba(255,255,255,.04));backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border:1px solid rgba(255,255,255,.28);border-radius:20px;padding:17px 19px;box-shadow:0 20px 44px -22px rgba(1,110,91,.6),inset 0 1px 0 rgba(255,255,255,.4);overflow:hidden">
+          <div aria-hidden="true" style="position:absolute;top:-40px;right:-30px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(126,161,57,.4),transparent 70%);pointer-events:none"></div>
+          <div style="display:flex;align-items:center;gap:11px"><span style="flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:linear-gradient(140deg,#7EA139,#016E5B);box-shadow:0 8px 18px -8px rgba(1,110,91,.75),inset 0 1px 0 rgba(255,255,255,.4)"><svg width="21" height="21" viewBox="0 0 24 24" fill="none"><path d="M4 20l3.4-9.2 5.8 5.8L4 20Z" stroke="#F5F9EF" stroke-width="1.7" stroke-linejoin="round"></path><path d="M8.4 8.9c1.9-1.9 5.9-1.5 9 .8s4.4 5.9 2.5 7.8" stroke="#F5F9EF" stroke-width="1.7" stroke-linecap="round"></path><path d="M15 3v2M19 5l-1.4 1.4M21 9h-2" stroke="#FFD626" stroke-width="1.7" stroke-linecap="round"></path></svg></span><span style="font-weight:700;font-size:15px;color:#F5F9EF;font-family:'Bricolage Grotesque',sans-serif">Parties &amp; bulk orders</span></div>
+          <div style="font-size:13.5px;line-height:1.5;color:rgba(243,247,236,.85)">Pop-up mango counters for offices &amp; events.</div>
+          <a href="tel:+918792633425" style="align-self:flex-start;margin-top:2px;display:inline-flex;align-items:center;gap:7px;background:rgba(255,214,38,.18);border:1px solid rgba(255,214,38,.42);color:#FFD626;padding:9px 17px;border-radius:999px;font-weight:700;font-size:13px;transition:background .18s ease" style-hover="background:rgba(255,214,38,.3)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .5 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.5-1 1-1h3.4c.6 0 1 .5 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1l-2.2 2.3Z" fill="#FFD626"></path></svg>Enquire</a>
+        </div>
+      </div>
+    </div><div data-reveal="" style="flex:1 1 340px;min-width:280px;position:relative;aspect-ratio:4/5;border-radius:26px;overflow:hidden;background:#0E1F1A;box-shadow:0 40px 80px -30px rgba(14,102,85,.55),0 0 0 1px rgba(255,255,255,.5)">
+      <video ref="{{ heroVideoRef }}" src="./assets/WANGO_Showreel.mp4" autoplay="" playsinline="" loop="" muted="" style="width:100%;height:100%;object-fit:cover;display:block"></video>
+    </div>
+  <sc-if value="{{ ownerMode }}" hint-placeholder-val="{{ false }}">
+  <button onClick="{{ adminOpen }}" title="Manage stock" style="position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:70;display:flex;align-items:center;gap:9px;background:#FBF7F0;color:#016E5B;border:1.5px solid rgba(1,110,91,.22);padding:11px 16px;border-radius:999px;font-weight:700;font-size:13.5px;cursor:pointer;box-shadow:0 12px 30px -12px rgba(1,110,91,.5)">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7h18M3 12h18M3 17h18"></path></svg>
+    Stock <span style="font-size:11px;font-weight:700;color:#8A6A00;background:rgba(255,214,38,.35);padding:2px 8px;border-radius:999px">{{ offBadge }}</span>
+  </button>
+  </sc-if>
+
+  <sc-if value="{{ pinOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;z-index:120;background:rgba(1,49,39,.7);backdrop-filter:blur(6px);display:grid;place-items:center;padding:20px">
+      <div style="width:min(320px,100%);background:#FBF7F0;border-radius:26px;padding:26px 24px;box-shadow:0 40px 90px -30px rgba(0,0,0,.6);text-align:center">
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;color:#12211C">Staff PIN</div>
+        <div style="font-size:12.5px;color:#7A8A82;margin-top:3px">Enter the code to manage stock</div>
+        <div style="display:flex;justify-content:center;gap:12px;margin:20px 0 6px">
+          <sc-for list="{{ pinDots }}" as="d" hint-placeholder-count="4">
+            <span style="width:14px;height:14px;border-radius:50%;background:{{ d.dotBg }};border:2px solid #016E5B"></span>
+          </sc-for>
+        </div>
+        <div style="height:16px;font-size:12px;font-weight:700;color:#B3261E">{{ pinErrMsg }}</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:8px">
+          <sc-for list="{{ pinKeys }}" as="key" hint-placeholder-count="9">
+            <button onClick="{{ key.press }}" style="padding:16px 0;border:none;border-radius:14px;background:#fff;font-family:'Bricolage Grotesque',sans-serif;font-size:20px;font-weight:700;color:#12211C;cursor:pointer;box-shadow:0 4px 10px -6px rgba(0,0,0,.3)">{{ key.k }}</button>
+          </sc-for>
+          <button onClick="{{ pinCancel }}" style="padding:16px 0;border:none;border-radius:14px;background:transparent;font-size:13px;font-weight:700;color:#7A8A82;cursor:pointer">Cancel</button>
+          <button onClick="{{ pinPressZero }}" style="padding:16px 0;border:none;border-radius:14px;background:#fff;font-family:'Bricolage Grotesque',sans-serif;font-size:20px;font-weight:700;color:#12211C;cursor:pointer;box-shadow:0 4px 10px -6px rgba(0,0,0,.3)">0</button>
+          <button onClick="{{ pinBack }}" style="padding:16px 0;border:none;border-radius:14px;background:transparent;font-size:20px;font-weight:700;color:#7A8A82;cursor:pointer">⌫</button>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <div onClick="{{ adminClose }}" style="position: fixed; inset: 0; z-index: 80; background: rgba(18,33,28,.5); backdrop-filter: blur(2px); transition: opacity .26s ease; opacity: {{ adminScrimO }}; pointer-events: {{ adminScrimPE }}; left: -34px; top: 66px"></div>
+
+  <aside style="position:fixed;top:0;left:0;bottom:0;z-index:90;width:min(400px,100%);background:#FBF7F0;display:flex;flex-direction:column;box-shadow:20px 0 60px rgba(18,33,28,.24);transform:{{ adminDrawerT }};transition:transform .32s cubic-bezier(.2,.9,.3,1)">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1px solid rgba(18,33,28,.08)">
+      <div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px">Stock manager</div>
+        <div style="font-size:12.5px;color:#7A8A82;margin-top:2px">Turn dishes on or off for today</div>
+      </div>
+      <button onClick="{{ adminClose }}" style="width:34px;height:34px;border-radius:50%;border:none;background:#F1EDE4;font-size:18px;color:#4B5A50;cursor:pointer">×</button>
+    </div>
+    <div style="flex:1;overflow-y:auto;padding:14px 22px 24px">
+      <div style="display:flex;align-items:center;gap:12px;padding:14px;border-radius:14px;background:{{ kitchenBoxBg }};border:1.5px solid {{ kitchenBoxBorder }};margin-bottom:6px">
+        <div style="flex:1">
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:15px;color:#12211C">{{ kitchenTitle }}</div>
+          <div style="font-size:12px;color:#7A8A82;margin-top:2px">{{ kitchenSub }}</div>
+        </div>
+        <button onClick="{{ kitchenToggle }}" aria-label="Toggle kitchen" style="width:46px;height:26px;border-radius:999px;border:none;cursor:pointer;padding:3px;position:relative;background:{{ kitchenTrackBg }};transition:background .18s ease;flex:0 0 auto">
+          <span style="display:block;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.3);transform:{{ kitchenKnobT }};transition:transform .18s ease"></span>
+        </button>
+      </div>
+      <sc-for list="{{ stockGroups }}" as="g" hint-placeholder-count="4">
+        <div style="padding-top:16px">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+            <span style="width:5px;height:20px;border-radius:99px;background:linear-gradient(#FFD626,#FFA717)"></span>
+            <h4 style="font-family:'Bricolage Grotesque',sans-serif;font-size:15px;font-weight:700;margin:0;flex:1">{{ g.name }}</h4>
+            <button onClick="{{ g.toggleAll }}" style="font-size:11.5px;font-weight:700;color:#016E5B;background:rgba(1,110,91,.1);border:none;padding:6px 11px;border-radius:999px;cursor:pointer">{{ g.allOffLabel }}</button>
+          </div>
+          <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="3">
+            <div style="display:flex;align-items:center;gap:12px;padding:9px 2px;border-bottom:1px solid rgba(18,33,28,.06)">
+              <span style="flex:1;font-size:14px;color:#12211C">{{ it.name }}</span>
+              <button onClick="{{ it.toggle }}" aria-label="Toggle stock" style="width:46px;height:26px;border-radius:999px;border:none;cursor:pointer;padding:3px;position:relative;background:{{ it.trackBg }};transition:background .18s ease">
+                <span style="display:block;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.3);transform:{{ it.knobT }};transition:transform .18s ease"></span>
+              </button>
+            </div>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+  </aside>
+
+  <div onClick="{{ closeCart }}" style="position: fixed; inset: 0; z-index: 80; background: rgba(18, 33, 28, 0.5); backdrop-filter: blur(2px); transition: opacity 0.26s; opacity: 0; pointer-events: none;"></div></section>
+
+  <div data-reveal-skip="" style="position:relative;margin-top:34px;padding:16px 0;background:linear-gradient(90deg,#016E5B,#025A48 45%,#016E5B);overflow:hidden;transform:rotate(-1.2deg);box-shadow:0 20px 44px -20px rgba(14,102,85,.55)">
+    <div class="wg-marquee-track">
+      <div style="display:flex;align-items:center;gap:34px;padding-right:34px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;color:#FBF7F0;white-space:nowrap">
+        <span>365 DAYS OF MANGO</span><span style="color:#FFD626">✺</span><span>CARBIDE-FREE · NATURALLY RIPENED</span><span style="color:#FFD626">✺</span><span>MADE TO ORDER</span><span style="color:#FFD626">✺</span><span>DELIVERED FRESH ACROSS INDIA</span><span style="color:#FFD626">✺</span><span>THE MANGO CLUB</span><span style="color:#FFD626">✺</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:34px;padding-right:34px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;color:#FBF7F0;white-space:nowrap" aria-hidden="true">
+        <span>365 DAYS OF MANGO</span><span style="color:#FFD626">✺</span><span>CARBIDE-FREE · NATURALLY RIPENED</span><span style="color:#FFD626">✺</span><span>MADE TO ORDER</span><span style="color:#FFD626">✺</span><span>DELIVERED FRESH ACROSS INDIA</span><span style="color:#FFD626">✺</span><span>THE MANGO CLUB</span><span style="color:#FFD626">✺</span>
+      </div>
+    </div>
+  </div>
+
+  <section style="max-width: 1180px; margin: 0 auto; padding: 48px 20px 0; position: relative">
+    <div style="display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-.025em;margin:0;color:#F5F9EF">BEST SELLERS&nbsp;</h2>
+      <span style="font-size:13.5px;color:rgba(243,247,236,.72)">Swipe for more →</span>
+    </div>
+    <div style="display:flex;gap:16px;overflow-x:auto;padding:20px 4px 26px;scroll-snap-type:x mandatory;perspective:1100px">
+      <sc-for list="{{ bestsellers }}" as="b" hint-placeholder-count="4">
+        <div onMouseMove="{{ tiltMove }}" onMouseLeave="{{ tiltLeave }}" class="wg-tilt" style="flex:0 0 240px;scroll-snap-align:start;background:linear-gradient(180deg,#FFFFFF,#FFFDF8);border:1px solid rgba(255,255,255,.8);border-radius:22px;overflow:hidden;box-shadow:0 14px 30px -12px rgba(14,102,85,.22),0 2px 6px rgba(18,33,28,.05)">
+          <div style="height:150px;position:relative;background:linear-gradient(150deg,#FFE58A,#FFB020 55%,#F08A00);overflow:hidden"><sc-if value="{{ b.hasPhoto }}" hint-placeholder-val="{{ false }}"><img src="{{ b.photo }}" alt="{{ b.name }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block"></sc-if><sc-if value="{{ b.noPhoto }}" hint-placeholder-val="{{ true }}"><div style="position:absolute;inset:0;display:grid;place-items:center"><div style="position:absolute;inset:0;background:radial-gradient(120px 90px at 78% 18%,rgba(255,255,255,.55),transparent 70%)"></div><svg width="58" height="58" viewBox="0 0 24 24" fill="none" style="position:relative;opacity:.9"><path d="M18.6 8.1c1.6 2.9.9 6.7-1.9 9.2-2.9 2.6-6.9 3.2-9.9 1.6-2.1-1.1-3.2-3.3-2.8-5.7.5-3.1 3-6 6.2-7.1 2.7-.9 5.4-.3 7 .9-1.6.2-3 .9-3.9 2" stroke="#12211C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M15.5 6.2c.9-1.6 2.6-2.5 4.3-2.4-.1 1.7-1 3.3-2.5 4.1" stroke="#12211C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></div></sc-if></div>
+          <div style="padding:14px 15px 16px">
+            <div style="font-weight:700;font-size:15px;line-height:1.25">{{ b.name }}</div>
+            <div style="font-size:12.5px;color:#7A8A82;margin-top:3px">{{ b.category }}</div>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:12px;gap:10px">
+              <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:17px">{{ b.priceLabel }}</span>
+              <button onClick="{{ b.add }}" style="background:#016E5B;color:#fff;border:none;padding:9px 16px;border-radius:999px;font-weight:600;font-size:13px;cursor:pointer;transition:background .18s ease" style-hover="background:#12211C">Add</button>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="wg-menu" style="max-width:1180px;margin:40px auto 0;padding:8px 20px 32px">
+    <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(24px,3vw,32px);font-weight:700;letter-spacing:-.025em;margin:0 0 18px;color:#F5F9EF">The full menu</h2>
+    <div style="position:sticky;top:66px;z-index:40;background:transparent;margin:0 -20px;padding:12px 20px 12px">
+      <div style="display:flex;align-items:center;gap:12px;background:linear-gradient(180deg,#FFFFFF,#FFFDF6);border:1px solid rgba(255,255,255,.7);border-radius:999px;padding:8px 10px 8px 8px;max-width:480px;box-shadow:0 12px 30px -14px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.8)">
+        <span style="width:38px;height:38px;flex:0 0 auto;border-radius:50%;background:linear-gradient(135deg,#FFD626,#FFA717);display:grid;place-items:center;box-shadow:0 6px 14px -6px rgba(255,167,23,.7)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5A3800" stroke-width="2.4"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </span>
+        <input value="{{ query }}" onInput="{{ onSearch }}" placeholder="Search dishes — mango, momos, shake" style="border:none;outline:none;background:transparent;width:100%;font-size:15px;font-weight:500;color:#12211C;padding-right:6px">
+      </div>
+      <div style="display:flex;gap:8px;overflow-x:auto;margin-top:12px;padding-bottom:4px">
+        <sc-for list="{{ chips }}" as="c" hint-placeholder-count="6">
+          <button onClick="{{ c.go }}" style="flex:0 0 auto;padding:10px 18px;border-radius:999px;font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:13.5px;letter-spacing:-.01em;cursor:pointer;white-space:nowrap;border:1.5px solid rgba(255,214,38,.45);background:#013127;color:#F5F9EF;box-shadow:0 6px 16px -10px rgba(0,0,0,.6);transition:all .16s ease" style-hover="background:linear-gradient(135deg,#FFD626,#FFA717);color:#5A3800;border-color:transparent">{{ c.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+
+    <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="3">
+      <div id="{{ cat.domId }}" style="padding-top:30px">
+        <div style="display:flex;align-items:center;gap:11px;margin-bottom:14px">
+          <span style="width:5px;height:26px;border-radius:99px;background:linear-gradient(#FFD626,#FFA717);flex:0 0 auto"></span>
+          <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(18px,4.5vw,22px);font-weight:700;letter-spacing:-.02em;margin:0;color:#F5F9EF">{{ cat.name }}</h3>
+          <span style="font-size:11px;font-weight:700;color:#FFD626;background:rgba(255,255,255,.14);padding:3px 9px;border-radius:999px;flex:0 0 auto">{{ cat.count }}</span>
+          <span style="margin-left:auto;font-size:11px;color:rgba(243,247,236,.6);white-space:nowrap">{{ cat.note }}</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:12px">
+          <sc-for list="{{ cat.items }}" as="it" hint-placeholder-count="4">
+            <div style="display:flex;align-items:center;gap:12px;background:linear-gradient(180deg,#FFFFFF,#FFFDF6);border:1px solid rgba(1,110,91,.12);border-radius:18px;padding:14px 15px;box-shadow:0 8px 20px -14px rgba(1,110,91,.45);transition:transform .16s ease,border-color .18s ease,box-shadow .18s ease" style-hover="transform:translateY(-2px);border-color:rgba(255,167,23,.5);box-shadow:0 14px 28px -14px rgba(1,110,91,.35)">
+              <div style="flex:1;min-width:0">
+                <div style="font-weight:600;font-size:15.5px;line-height:1.3;color:#12211C">{{ it.name }}</div>
+                <sc-if value="{{ it.hasDesc }}" hint-placeholder-val="{{ false }}">
+                  <div style="font-size:12px;line-height:1.35;color:#7A8A82;margin-top:3px">{{ it.desc }}</div>
+                </sc-if>
+                <div style="display:flex;align-items:center;gap:8px;margin-top:6px;flex-wrap:wrap">
+                  <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:15px;color:#016E5B">{{ it.priceLabel }}</span>
+                  <sc-if value="{{ it.tag }}" hint-placeholder-val="{{ true }}">
+                    <span style="font-size:10px;font-weight:700;letter-spacing:.05em;padding:3px 9px;border-radius:999px;background:linear-gradient(#FFD626,#FFA717);color:#5A3800">{{ it.tag }}</span>
+                  </sc-if>
+                </div>
+              </div>
+              <sc-if value="{{ it.hasQty }}" hint-placeholder-val="{{ false }}">
+                <div style="display:flex;align-items:center;gap:6px;background:#016E5B;border-radius:999px;padding:5px;flex:0 0 auto">
+                  <button aria-label="Remove one" onClick="{{ it.dec }}" style="width:34px;height:34px;border-radius:50%;border:none;background:rgba(255,255,255,.16);font-size:19px;font-weight:700;color:#fff;cursor:pointer;line-height:1">−</button>
+                  <span style="min-width:20px;text-align:center;font-weight:700;font-size:15px;color:#fff">{{ it.qty }}</span>
+                  <button aria-label="Add one" onClick="{{ it.inc }}" style="width:34px;height:34px;border-radius:50%;border:none;background:#fff;font-size:19px;font-weight:700;color:#016E5B;cursor:pointer;line-height:1">+</button>
+                </div>
+              </sc-if>
+              <sc-if value="{{ it.showAdd }}" hint-placeholder-val="{{ true }}">
+                <button aria-label="Add to order" onClick="{{ it.inc }}" style="width:46px;height:46px;flex:0 0 auto;border:none;border-radius:50%;background:linear-gradient(135deg,#FFD626,#FFA717);color:#5A3800;font-size:26px;font-weight:700;line-height:1;cursor:pointer;display:grid;place-items:center;box-shadow:0 8px 18px -6px rgba(255,167,23,.6);transition:transform .16s ease" style-hover="transform:scale(1.08)">+</button>
+              </sc-if>
+              <sc-if value="{{ it.onRequest }}" hint-placeholder-val="{{ false }}">
+                <a href="{{ askLink }}" target="_blank" rel="noopener" style="font-size:12px;font-weight:700;color:#D97A0A;white-space:nowrap;flex:0 0 auto">Ask price →</a>
+              </sc-if>
+              <sc-if value="{{ it.soldOut }}" hint-placeholder-val="{{ false }}">
+                <span style="font-size:11.5px;font-weight:700;letter-spacing:.04em;color:#B3261E;background:rgba(179,38,30,.1);border:1px solid rgba(179,38,30,.22);padding:8px 14px;border-radius:999px;white-space:nowrap;flex:0 0 auto">Sold out</span>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+
+    <sc-if value="{{ empty }}" hint-placeholder-val="{{ false }}">
+      <p style="text-align:center;padding:60px 0;color:#7A8A82;font-size:16px">Nothing matches that. Try “mango”, “shake” or “curry”.</p>
+    </sc-if>
+  </section>
+
+  <section style="max-width:1180px;margin:56px auto 0;padding:0 20px">
+    <div data-reveal="" style="position:relative;background:linear-gradient(150deg,#016E5B,#023A2E 70%);border-radius:30px;padding:clamp(26px,4vw,44px);color:#FBF7F0;overflow:hidden;box-shadow:0 40px 80px -34px rgba(14,102,85,.6)">
+      <div aria-hidden="true" style="position:absolute;top:-90px;right:-70px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(255,201,51,.28),transparent 70%);filter:blur(6px)"></div>
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin:0 0 24px">
+        <div>
+          <h2 style="font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(22px,3vw,30px);font-weight:700;letter-spacing:-.025em;margin:0;color:#fff">What regulars say</h2>
+          <div style="display:flex;align-items:center;gap:12px;margin-top:10px">
+            <span style="font-family:'Bricolage Grotesque',sans-serif;font-size:34px;font-weight:700;color:#FFD626;line-height:1">4.9</span>
+            <div>
+              <div style="color:#FFD626;font-size:15px;letter-spacing:2px">★★★★★</div>
+              <div style="font-size:12.5px;color:rgba(255,255,255,.72);margin-top:2px">{{ reviewCount }} on Google</div>
+            </div>
+          </div>
+        </div>
+        <a href="https://www.google.com/search?q=Wango+The+Mango+Club+Bengaluru+reviews" target="_blank" rel="noopener" style="padding:10px 18px;border-radius:999px;border:1.5px solid rgba(255,255,255,.32);color:#fff;font-weight:600;font-size:13.5px;white-space:nowrap;transition:border-color .18s ease" style-hover="border-color:#FFD626;color:#FFD626">Read all on Google →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
+        <sc-for list="{{ reviews }}" as="rev" hint-placeholder-count="4">
+          <div style="position:relative;background:rgba(255,255,255,.1);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:8px;box-shadow:0 12px 30px -16px rgba(0,0,0,.4)">
+            <div style="color:#FFD626;font-size:14px;letter-spacing:2px">★★★★★</div>
+            
+            <p style="margin:0;font-size:14.5px;line-height:1.5;color:#fff">{{ rev.text }}</p><div style="display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:6px">
+              <div style="width:36px;height:36px;border-radius:50%;flex:0 0 auto;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#FFD626,#FFA717);color:#12211C;font-weight:700;font-size:15px;font-family:'Bricolage Grotesque',sans-serif">{{ rev.initial }}</div>
+              <div>
+                <div style="display:flex;align-items:center;gap:8px"><span style="font-size:12.5px;color:#fff;font-weight:600">{{ rev.name }}</span><sc-if value="{{ rev.showBadge }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;font-weight:700;letter-spacing:.06em;padding:2px 7px;border-radius:999px;background:rgba(255,201,51,.18);color:#FFD626">{{ rev.badge }}</span></sc-if></div>
+                <div style="font-size:12px;color:rgba(255,255,255,.6)">{{ rev.meta }}</div>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      </div>
+    </section></div>
+  
+
+  <footer data-reveal="" style="max-width:1180px;margin:0 auto;padding:44px 20px 20px;display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;border-top:1px solid rgba(255,255,255,.16);margin-top:56px;color:#EAF3E3">
+    <div style="max-width:34ch">
+      <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:17px">Wango — The Mango Club</div>
+      <p style="margin:8px 0 0;font-size:13.5px;color:rgba(234,243,227,.72);line-height:1.55">1673, 4th Cross, 9th Main Road, HAL 3rd Stage, New Thippasandra, Indiranagar, Bengaluru 560075</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:13.5px">
+      <div style="font-weight:700;font-size:12px;letter-spacing:.1em;color:rgba(234,243,227,.55)">HOURS</div>
+      <span>Mon–Thu · 11:30 AM – 11:30 PM</span>
+      <span>Fri–Sun · 11:30 AM – 11:45 PM</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:13.5px">
+      <div style="font-weight:700;font-size:12px;letter-spacing:.1em;color:rgba(234,243,227,.55)">REACH US</div>
+      <a href="tel:+918792633425">+91 87926 33425</a>
+      <a href="https://www.instagram.com/wango.in/?hl=en" target="_blank" rel="noopener">@wango.in</a>
+      <a href="https://share.google/kKR4TJ16gzsHp7imG" target="_blank" rel="noopener">Google Maps</a>
+    </div>
+  </footer>
+
+  <div style="position:fixed;left:0;right:0;bottom:0;z-index:70;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(to top,rgba(1,49,39,.98),rgba(1,49,39,0));pointer-events:none;transform:{{ barT }};opacity:{{ barO }};transition:transform .28s cubic-bezier(.2,.9,.3,1),opacity .2s ease">
+    <button onClick="{{ openCart }}" style="pointer-events:auto;display:flex;align-items:center;justify-content:space-between;gap:14px;width:min(560px,100%);margin:0 auto;background:#12211C;color:#FBF7F0;border:none;border-radius:999px;padding:15px 20px;font-weight:600;font-size:15px;cursor:pointer;box-shadow:0 16px 34px rgba(18,33,28,.28)">
+      <span>{{ countLabel }}</span>
+      <span style="display:flex;align-items:center;gap:10px;font-weight:700">{{ totalLabel }} <span style="color:#FFA717">Review order →</span></span>
+    </button>
+  </div>
+
+  
+
+  <aside style="position:fixed;top:0;right:0;bottom:0;z-index:90;width:min(440px,100%);background:#FBF7F0;display:flex;flex-direction:column;box-shadow:-20px 0 60px rgba(18,33,28,.24);transform:{{ drawerT }};transition:transform .32s cubic-bezier(.2,.9,.3,1)">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1px solid rgba(18,33,28,.08)">
+      <div>
+        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px">{{ stepTitle }}</div>
+        <div style="font-size:12.5px;color:#7A8A82;margin-top:2px">{{ stepSub }}</div>
+      </div>
+      <button onClick="{{ closeCart }}" style="width:34px;height:34px;border-radius:50%;border:none;background:#F1EDE4;font-size:18px;color:#4B5A50;cursor:pointer">×</button>
+    </div>
+
+    <div style="flex:1;overflow-y:auto;padding:16px 22px">
+      <sc-if value="{{ isEmptyCart }}" hint-placeholder-val="{{ true }}">
+        <div style="text-align:center;padding:70px 12px;color:#7A8A82">
+          <div style="font-size:15px;line-height:1.6">Your cart is empty.<br>Add a dish and it shows up here.</div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ showLines }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <sc-for list="{{ lines }}" as="l" hint-placeholder-count="2">
+            <div style="display:flex;gap:12px;align-items:center;background:#fff;border:1px solid rgba(18,33,28,.07);border-radius:14px;padding:12px 14px">
+              <div style="flex:1;min-width:0">
+                <div style="font-weight:600;font-size:14.5px">{{ l.name }}</div>
+                <div style="font-size:12px;color:#7A8A82;margin-top:2px">{{ l.unit }}</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:4px;background:#F1EDE4;border-radius:999px;padding:3px">
+                <button onClick="{{ l.dec }}" style="width:28px;height:28px;border-radius:50%;border:none;background:#fff;font-weight:700;color:#016E5B;cursor:pointer">−</button>
+                <span style="min-width:18px;text-align:center;font-weight:700;font-size:13.5px">{{ l.qty }}</span>
+                <button onClick="{{ l.inc }}" style="width:28px;height:28px;border-radius:50%;border:none;background:#fff;font-weight:700;color:#016E5B;cursor:pointer">+</button>
+              </div>
+              <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:15px;min-width:56px;text-align:right">{{ l.total }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isDetails }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div style="display:flex;background:#F1EDE4;border-radius:999px;padding:4px">
+            <button onClick="{{ setPickup }}" style="flex:1;padding:11px;border:none;border-radius:999px;font-weight:600;font-size:14px;cursor:pointer;background:{{ pickupBg }};color:{{ pickupFg }};transition:all .18s ease">Pickup</button>
+            <button onClick="{{ setDelivery }}" style="flex:1;padding:11px;border:none;border-radius:999px;font-weight:600;font-size:14px;cursor:pointer;background:{{ deliveryBg }};color:{{ deliveryFg }};transition:all .18s ease">Delivery</button>
+          </div>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600;color:#4B5A50">Your name
+            <input value="{{ name }}" onInput="{{ onName }}" placeholder="Name for the order" style="border:1.5px solid rgba(18,33,28,.12);border-radius:12px;padding:12px 14px;font-size:15px;background:#fff;outline:none;color:#12211C">
+          </label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600;color:#4B5A50">Phone
+            <input value="{{ phone }}" onInput="{{ onPhone }}" placeholder="10-digit mobile" style="border:1.5px solid rgba(18,33,28,.12);border-radius:12px;padding:12px 14px;font-size:15px;background:#fff;outline:none;color:#12211C">
+          </label>
+          <sc-if value="{{ isDelivery }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600;color:#4B5A50">Delivery address
+                <textarea value="{{ address }}" onInput="{{ onAddress }}" rows="3" placeholder="Flat, street, landmark" style="border:1.5px solid rgba(18,33,28,.12);border-radius:12px;padding:12px 14px;font-size:15px;background:#fff;outline:none;resize:vertical;color:#12211C"></textarea>
+              </label>
+              <div style="display:flex;align-items:flex-start;gap:10px;background:rgba(1,110,91,.08);border:1px solid rgba(1,110,91,.2);border-radius:12px;padding:12px 14px">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="flex:none;margin-top:1px"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z" stroke="#016E5B" stroke-width="1.7" stroke-linejoin="round"></path><circle cx="12" cy="10" r="2.4" stroke="#016E5B" stroke-width="1.7"></circle></svg>
+                <p style="margin:0;font-size:12.5px;line-height:1.5;color:#4B5A50">Add your full address above. Our team will confirm the exact delivery charge with you on WhatsApp before your order is prepared.</p>
+              </div>
+            </div>
+          </sc-if>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600;color:#4B5A50">Notes for the kitchen
+            <textarea value="{{ notes }}" onInput="{{ onNotes }}" rows="2" placeholder="Less spice, no onion, cutlery…" style="border:1.5px solid rgba(18,33,28,.12);border-radius:12px;padding:12px 14px;font-size:15px;background:#fff;outline:none;resize:vertical;color:#12211C"></textarea>
+          </label>
+        </div>
+      </sc-if>
+    </div>
+
+    <sc-if value="{{ showFooter }}" hint-placeholder-val="{{ false }}">
+      <div style="border-top:1px solid rgba(18,33,28,.08);background:#fff;padding:16px 22px calc(18px + env(safe-area-inset-bottom))">
+        <div style="display:flex;justify-content:space-between;font-size:13.5px;color:#4B5A50;padding:3px 0"><span>Items</span><span>{{ subtotalLabel }}</span></div>
+        <div style="display:flex;justify-content:space-between;font-size:13.5px;color:#4B5A50;padding:3px 0"><span>Parcel charges</span><span>{{ parcelLabel }}</span></div>
+        <sc-if value="{{ isDelivery }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;justify-content:space-between;font-size:13.5px;color:#4B5A50;padding:3px 0"><span>Delivery</span><span>Confirmed on WhatsApp</span></div>
+        </sc-if>
+        <div style="display:flex;justify-content:space-between;font-size:18px;font-weight:700;border-top:1px solid rgba(18,33,28,.08);margin-top:8px;padding-top:12px"><span>Total</span><span style="font-family:'Bricolage Grotesque',sans-serif">{{ totalLabel }}</span></div>
+        <button onClick="{{ primaryAction }}" style="width:100%;margin-top:14px;border:none;border-radius:999px;padding:16px;font-weight:700;font-size:15.5px;cursor:pointer;background:{{ primaryBg }};color:{{ primaryFg }};display:flex;align-items:center;justify-content:center;gap:10px;transition:transform .18s ease" style-hover="transform:translateY(-2px)">{{ primaryLabel }}</button>
+        <p style="margin:10px 0 0;font-size:11.5px;color:#7A8A82;line-height:1.5;text-align:center">{{ footNote }}</p>
+      </div>
+    </sc-if>
+  </aside>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;whatsappNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;918792633425&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Ordering&quot;},&quot;heroVideoUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;./assets/WANGO_Showreel.mp4&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;heroPosterUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;ownerPin&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;9061&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Owner / Stock&quot;},&quot;firebaseDbUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://wango-6e6a4-default-rtdb.asia-southeast1.firebasedatabase.app/&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Owner / Stock&quot;}}">
+// Dish photos — owner-set only; customers can never change them (display-only).
+// Baked into the standalone via ext-resource-dependency; falls back to the asset
+// path in the live editor. Add more by dropping a file in assets/ + a meta tag.
+const PHOTO_FILES = {
+  des4: "./assets/dish-tres-leches.jpg", des1: "./assets/dish-tiramisu.jpg",
+  app2: "./assets/dish-quesadilla.jpg", app8: "./assets/dish-momos.jpg",
+  sh1: "./assets/dish-jackmanco.jpg", tt1: "./assets/dish-mango-sago.jpg",
+  des6: "./assets/dish-cheesecake.png", des3: "./assets/dish-sticky-rice.png",
+};
+const PHOTO_RES = { des4:"photoDes4", des1:"photoDes1", app2:"photoApp2", app8:"photoApp8", sh1:"photoSh1", tt1:"photoTt1", des6:"photoDes6", des3:"photoDes3" };
+const photoUrl = id => {
+  const r = typeof window !== "undefined" && window.__resources;
+  if (r && PHOTO_RES[id] && r[PHOTO_RES[id]]) return r[PHOTO_RES[id]];
+  return PHOTO_FILES[id] || "";
+};
+
+const MENU = [
+  { category: "Juices & Lassi", parcel: false, items: [
+    { id:"jl1", name:"Mallika Mist", price:60, desc:"Mallika mango" },
+    { id:"jl2", name:"Alphoglow", price:60, desc:"Alphonso mango" },
+    { id:"jl3", name:"Sendhaze", price:60, desc:"Sindhoor mango" },
+    { id:"jl4", name:"Aam Panna", price:60, desc:"Raw mango + amchur · salty" },
+    { id:"jl5", name:"Wango Lush (Lassi)", price:89, desc:"Curd + fresh mango" },
+  ]},
+  { category: "Shakes", parcel: false, items: [
+    { id:"sh1", name:"Jackmanco", price:179, tag:"Must-try", desc:"Jackfruit, mango & coconut" },
+    { id:"sh2", name:"Classic Shake", price:99, desc:"Fresh mango + milk" },
+    { id:"sh3", name:"Mangostraw", price:139, desc:"Mango + strawberry" },
+    { id:"sh4", name:"Avogold", price:149, desc:"Avocado + mango" },
+    { id:"sh5", name:"Tender Mango", price:149, desc:"Tender coconut + mango" },
+    { id:"sh6", name:"Royal Imam", price:139, desc:"Premium mango + milk (Imam Pasand)" },
+  ]},
+  { category: "Desserts", parcel: true, items: [
+    { id:"des1", name:"Tiramisu", price:299, tag:"Bestseller" },
+    { id:"des3", name:"Mango Sticky Rice", price:299, tag:"Bestseller" },
+    { id:"des6", name:"Mango Cheesecake", price:289 },
+    { id:"des4", name:"Tres Leches", price:249 },
+    { id:"des9", name:"Mango Forest", price:179 },
+    { id:"des5", name:"Mango Cream", price:169 },
+    { id:"des13", name:"Ice Cream (Large)", price:110 },
+    { id:"des10", name:"Wango Biscoff", price:99 },
+    { id:"des11", name:"Macaron", price:69 },
+    { id:"des7", name:"Mousse", price:59 },
+    { id:"des12", name:"Ice Cream (Regular)", price:60 },
+    { id:"des8", name:"Mini Cupcake", price:20 },
+    { id:"des2", name:"Truffles", price:null },
+  ]},
+  { category: "Mojitos & Smoothies", parcel: false, items: [
+    { id:"ms1", name:"Wango Mojito", price:149 },
+    { id:"ms2", name:"Sunshine Mojito", price:169 },
+    { id:"ms3", name:"Minto Mojo", price:149 },
+    { id:"ms4", name:"Strawmanglow Smoothie", price:149 },
+    { id:"ms5", name:"Mangonana Smoothie", price:129 },
+    { id:"ms6", name:"Cocoma Smoothie", price:149 },
+    { id:"ms7", name:"Classic Smoothie", price:119 },
+  ]},
+  { category: "Tropical Treats & Coolers", parcel: false, items: [
+    { id:"tt1", name:"Mango Sago", price:139, tag:"Must-try" },
+    { id:"tt2", name:"Wangooda", price:179 },
+    { id:"tt3", name:"Avil Milk", price:149 },
+    { id:"tt4", name:"Gezpacho", price:99 },
+    { id:"tt5", name:"Ginger Kick", price:60 },
+    { id:"tt6", name:"Mango Lime", price:60 },
+    { id:"tt7", name:"Mango Soda", price:60 },
+  ]},
+  { category: "Appetizers", parcel: true, items: [
+    { id:"app1", name:"Mango Sticky Rice", price:299, tag:"Must-try" },
+    { id:"app2", name:"Chicken Mango Quesadilla", price:189, tag:"Must-try" },
+    { id:"app3", name:"Paneer Mango Quesadilla", price:169 },
+    { id:"app4", name:"Butter Garlic Prawns", price:299 },
+    { id:"app5", name:"Mango Chicken Nachos", price:199 },
+    { id:"app6", name:"Loaded Mango Chicken Fries", price:199 },
+    { id:"app7", name:"Mango Chicken Porotta Roll", price:189 },
+    { id:"app8", name:"Paneer Momos", price:119 },
+    { id:"app9", name:"Corn Cheese Momos", price:129 },
+    { id:"app10", name:"Veg Momos", price:109 },
+  ]},
+  { category: "Man-Go Mains", parcel: true, items: [
+    { id:"mn1", name:"Kerala Fish Mango Curry", price:299, tag:"Must-try" },
+    { id:"mn2", name:"Mango Paneer Makhani", price:249 },
+    { id:"mn3", name:"Mango Chicken Curry", price:249 },
+    { id:"mn4", name:"Amchur Tawa Fish", price:230 },
+  ]},
+  { category: "Breads & Base", parcel: true, items: [
+    { id:"br1", name:"“Lacy Cloud” Appam", price:20, tag:"Must-try" },
+    { id:"br2", name:"“Noodle-Nest” Idiyappam", price:18 },
+    { id:"br3", name:"“Wango” Mango Puttu", price:49 },
+    { id:"br4", name:"“Flaky-Spiral” Porotta", price:22 },
+  ]},
+];
+
+const REVIEWS = [
+  { name:"Vaishnavi S. Bijley", badge:"LOCAL GUIDE", meta:"Recommends the Tiramisu", text:"Ordered a Mango Tiramisu via WhatsApp — smooth, creamy, fresh mango and not overly sweet. Seamless ordering, prompt communication, on-time delivery, packaging intact." },
+  { name:"Leandra George", meta:"Food, Service & Atmosphere 5/5", text:"One of the best cafes in Bangalore. Very cute place to hang out with friends! So many varieties of mango desserts — their Tres Leches, Cheesecakes and Tiramisu are heavenly. The Mango Salsa is a must-try!" },
+  { name:"Aditya Rao", meta:"Mango dessert lover", text:"Tried a few of their mango desserts and honestly everything was so fresh, creamy, and perfectly balanced. Beautiful presentation, not overly sweet, and the ambience is super cute and aesthetic." },
+  { name:"Sneha Kulkarni", badge:"LOCAL GUIDE", meta:"Recommends the Sticky Rice", text:"The Mango Sticky Rice tastes exactly like the ones I had in Thailand. You can tell the mangoes are real and ripe, not artificial. Will keep coming back all season." },
+  { name:"Rohit Menon", meta:"Ordered for a birthday", text:"Got a bulk order of desserts for a birthday and everyone was blown away. The team was super responsive on WhatsApp and everything arrived fresh and neatly packed." },
+  { name:"Priya Nair", meta:"First-time visitor", text:"Finally a café that does mango all year round! The Jackmanco shake is unreal and the Aam Panna took me straight back to childhood. Cozy little spot too." },
+  { name:"Karthik Iyer", meta:"Cheesecake fan", text:"Mango cheesecake was the highlight — rich but light, and the mango flavour is front and centre. Prices are honest for the quality. Highly recommend." },
+  { name:"Meghana D.", badge:"LOCAL GUIDE", meta:"Food & Atmosphere 5/5", text:"Aesthetic interiors, friendly staff, and every single mango item we tried was fresh. The Tres Leches melts in your mouth. My new favourite dessert stop in the city." },
+];
+
+const ALL = {};
+MENU.forEach(c => c.items.forEach(i => { ALL[i.id] = Object.assign({}, i, { parcel: c.parcel, category: c.category }); }));
+const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+const rupee = n => "₹" + n;
+
+class Component extends DCLogic {
+  state = { cart:{}, query:"", open:false, step:"cart", mode:"pickup", name:"", phone:"", address:"", notes:"", admin:false, stockOff:{}, ownerMode:false, pinOpen:false, pinEntry:"", pinError:false };
+
+  componentDidMount() {
+    try { const s = localStorage.getItem("wango-cart"); if (s) this.setState({ cart: JSON.parse(s) }); } catch (e) {}
+    try { const st = localStorage.getItem("wango-stock-off"); if (st) this.setState({ stockOff: JSON.parse(st) }); } catch (e) {}
+    this._keepPlaying = setInterval(() => {
+      const v = this._heroVideo;
+      if (v && v.paused && !document.hidden) { v.muted = true; const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+    }, 1000);
+    this._setupReveal();
+    // Firebase: live-pull stock now and every 15s so every customer stays in sync
+    if (this._fbUrl()) {
+      this._pullStock();
+      this._stockPoll = setInterval(() => { if (!this.state.admin) this._pullStock(); }, 15000);
+    }
+  }
+  _fbUrl() {
+    let u = (this.props.firebaseDbUrl || "https://wango-6e6a4-default-rtdb.asia-southeast1.firebasedatabase.app/").trim();
+    if (!u || !/^https:\/\/.+firebase/i.test(u)) return "";
+    return u.replace(/\/+$/, "") + "/wango-stock.json";
+  }
+  _pullStock() {
+    fetch(this._fbUrl(), { cache: "no-store" })
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        const stockOff = (data && typeof data === "object") ? data : {};
+        this.setState({ stockOff });
+        this.saveStock(stockOff);
+      })
+      .catch(() => {});
+  }
+  _pushStock(stockOff) {
+    const url = this._fbUrl();
+    if (!url) return;
+    fetch(url, { method: "PUT", body: JSON.stringify(stockOff), headers: { "Content-Type": "application/json" } }).catch(() => {});
+  }
+  _setupReveal() {
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion:reduce)").matches) return;
+    setTimeout(() => {
+      const root = this._root || document;
+      const sels = ["[data-reveal]", '[id^="wg-cat-"]', "section > div > h2", "section h3"];
+      const seen = new Set();
+      const els = [];
+      sels.forEach(s => document.querySelectorAll(s).forEach(el => { if (!seen.has(el)) { seen.add(el); els.push(el); } }));
+      if (!("IntersectionObserver" in window) || !els.length) return;
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("wg-in"); io.unobserve(en.target); } });
+      }, { threshold: .12, rootMargin: "0px 0px -8% 0px" });
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      const observed = [];
+      els.forEach((el, i) => {
+        const r = el.getBoundingClientRect();
+        if (r.top < vh * 0.95) { el.classList.add("wg-reveal", "wg-in"); return; }
+        el.classList.add("wg-reveal");
+        el.style.transitionDelay = ((i % 6) * 60) + "ms";
+        io.observe(el);
+        observed.push(el);
+      });
+      // Fail-open: never leave anything permanently hidden
+      setTimeout(() => observed.forEach(el => { if (!el.classList.contains("wg-in")) el.classList.add("wg-in"); }), 1400);
+      this._io = io;
+    }, 60);
+  }
+  componentWillUnmount() { if (this._keepPlaying) clearInterval(this._keepPlaying); if (this._io) this._io.disconnect(); if (this._stockPoll) clearInterval(this._stockPoll); }
+  save(cart) { try { localStorage.setItem("wango-cart", JSON.stringify(cart)); } catch (e) {} }
+  saveStock(stockOff) { try { localStorage.setItem("wango-stock-off", JSON.stringify(stockOff)); } catch (e) {} }
+  toggleStock(id) {
+    this.setState(s => {
+      const stockOff = Object.assign({}, s.stockOff);
+      if (stockOff[id]) delete stockOff[id]; else stockOff[id] = true;
+      this.saveStock(stockOff); this._pushStock(stockOff); return { stockOff };
+    });
+  }
+  setCatStock(catName, off) {
+    this.setState(s => {
+      const stockOff = Object.assign({}, s.stockOff);
+      const cat = MENU.find(c => c.category === catName);
+      if (cat) cat.items.forEach(i => { if (off) stockOff[i.id] = true; else delete stockOff[i.id]; });
+      this.saveStock(stockOff); this._pushStock(stockOff); return { stockOff };
+    });
+  }
+  openAdmin() {
+    if (this._unlocked) { this.setState({ admin: true, ownerMode: true }); return; }
+    this.setState({ pinOpen: true, pinEntry: "", pinError: false });
+  }
+  pinPress(d) {
+    this.setState(s => {
+      const pin = (this.props.ownerPin || "9061").trim();
+      let e = (s.pinEntry + d).slice(0, pin.length);
+      if (e.length === pin.length) {
+        if (e === pin) { this._unlocked = true; return { pinOpen: false, pinEntry: "", pinError: false, admin: true, ownerMode: true }; }
+        return { pinEntry: "", pinError: true };
+      }
+      return { pinEntry: e, pinError: false };
+    });
+  }
+  pinBack() { this.setState(s => ({ pinEntry: s.pinEntry.slice(0, -1), pinError: false })); }
+  logoTap() {
+    if (this.state.ownerMode) return;
+    clearTimeout(this._tapTimer);
+    this._tapCount = (this._tapCount || 0) + 1;
+    if (this._tapCount >= 5) { this._tapCount = 0; this.openAdmin(); return; }
+    this._tapTimer = setTimeout(() => { this._tapCount = 0; }, 1500);
+  }
+  toggleKitchen() {
+    this.setState(s => {
+      const stockOff = Object.assign({}, s.stockOff);
+      if (stockOff.__kitchen) delete stockOff.__kitchen; else stockOff.__kitchen = true;
+      this.saveStock(stockOff); this._pushStock(stockOff); return { stockOff };
+    });
+  }
+  bump(id, d) {
+    this.setState(s => {
+      const cart = Object.assign({}, s.cart);
+      cart[id] = Math.max(0, (cart[id] || 0) + d);
+      if (!cart[id]) delete cart[id];
+      this.save(cart);
+      return { cart };
+    });
+  }
+
+  totals() {
+    let subtotal = 0, parcelUnits = 0;
+    Object.entries(this.state.cart).forEach(([id, q]) => {
+      const it = ALL[id]; if (!it) return;
+      subtotal += (it.price || 0) * q;
+      parcelUnits += q;
+    });
+    const parcel = parcelUnits * 10;
+    const delivery = 0;
+    return { subtotal, parcel, delivery, total: subtotal + parcel + delivery };
+  }
+
+  waNumber() { return this.props.whatsappNumber || "918792633425"; }
+
+  waLink() {
+    const t = this.totals();
+    const L = ["*New order — Wango*", ""];
+    Object.entries(this.state.cart).forEach(([id, q]) => {
+      const it = ALL[id]; if (it) L.push("• " + it.name + " × " + q + " — " + rupee((it.price || 0) * q));
+    });
+    L.push("", "Items: " + rupee(t.subtotal), "Parcel: " + rupee(t.parcel));
+    if (this.state.mode === "delivery") L.push("Delivery: to be confirmed");
+    L.push("*Total (before delivery): " + rupee(t.total) + "*", "");
+    L.push("Type: " + (this.state.mode === "delivery" ? "Delivery" : "Pickup"));
+    if (this.state.name) L.push("Name: " + this.state.name);
+    if (this.state.phone) L.push("Phone: " + this.state.phone);
+    if (this.state.mode === "delivery" && this.state.address) L.push("Address: " + this.state.address);
+    if (this.state.mode === "delivery") L.push("(Please confirm the delivery charge for this address.)");
+    if (this.state.notes) L.push("Notes: " + this.state.notes);
+    return "https://wa.me/" + this.waNumber() + "?text=" + encodeURIComponent(L.join("\n"));
+  }
+
+  scrollTo(id) {
+    const el = document.getElementById(id);
+    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 150, behavior: "smooth" });
+  }
+
+  renderVals() {
+    const { cart, query, open, step, mode } = this.state;
+    const q = query.trim().toLowerCase();
+    const t = this.totals();
+    const count = Object.values(cart).reduce((a, b) => a + b, 0);
+    const isDelivery = mode === "delivery";
+    const details = step === "details";
+    const ready = count > 0 && this.state.name.trim() && this.state.phone.trim().length >= 8 && (!isDelivery || this.state.address.trim());
+
+    const decorate = it => {
+      const soldOut = !!this.state.stockOff[it.id];
+      const kitchenClosed = !!this.state.stockOff.__kitchen;
+      const blocked = soldOut || kitchenClosed;
+      return {
+      id: it.id, name: it.name, category: it.category,
+      desc: it.desc || "", hasDesc: !!it.desc,
+      priceLabel: it.price == null ? "On request" : rupee(it.price),
+      tag: it.tag || "", qty: cart[it.id] || 0, soldOut,
+      hasQty: !blocked && it.price != null && (cart[it.id] || 0) > 0,
+      showAdd: !blocked && it.price != null && !(cart[it.id] || 0),
+      onRequest: !blocked && it.price == null,
+      inc: () => this.bump(it.id, 1), dec: () => this.bump(it.id, -1),
+      add: () => this.bump(it.id, 1),
+      photo: photoUrl(it.id), hasPhoto: !!photoUrl(it.id), noPhoto: !photoUrl(it.id),
+    }; };
+
+    const categories = MENU.map(c => {
+      const items = c.items.filter(i => !q || i.name.toLowerCase().includes(q) || c.category.toLowerCase().includes(q));
+      return { name: c.category, domId: "wg-cat-" + slug(c.category), count: items.length + (items.length === 1 ? " item" : " items"), note: "+₹10 parcel per item", items: items.map(i => decorate(ALL[i.id])) };
+    }).filter(c => c.items.length);
+
+    const bestIds = ["des1", "des3", "des4", "app2", "app8", "sh1", "tt1", "des6", "mn1", "br1"];
+    const bestsellers = bestIds.map(id => decorate(ALL[id]));
+
+    const offCount = Object.keys(this.state.stockOff).filter(k => k !== "__kitchen").length;
+    const kitchenClosed = !!this.state.stockOff.__kitchen;
+    const stockGroups = MENU.map(c => {
+      const anyOff = c.items.some(i => this.state.stockOff[i.id]);
+      return {
+        name: c.category,
+        allOffLabel: anyOff ? "Enable all" : "Disable all",
+        toggleAll: () => this.setCatStock(c.category, !anyOff ? true : false),
+        items: c.items.map(i => ({
+          id: i.id, name: i.name,
+          inStock: !this.state.stockOff[i.id],
+          knobT: this.state.stockOff[i.id] ? "translateX(0)" : "translateX(20px)",
+          trackBg: this.state.stockOff[i.id] ? "#C9CFC9" : "#016E5B",
+          toggle: () => this.toggleStock(i.id),
+        })),
+      };
+    });
+
+    const chips = MENU.map(c => ({
+      label: c.category, bg: "#fff", fg: "#4B5A50",
+      go: () => this.scrollTo("wg-cat-" + slug(c.category)),
+    }));
+
+    const lines = Object.entries(cart).map(([id, qty]) => {
+      const it = ALL[id];
+      return {
+        name: it.name, qty,
+        unit: rupee(it.price || 0) + " each · +₹10 parcel",
+        total: rupee((it.price || 0) * qty),
+        inc: () => this.bump(id, 1), dec: () => this.bump(id, -1),
+      };
+    });
+
+    return {
+      count, countLabel: count === 1 ? "1 item in cart" : count + " items in cart",
+      heroVideoRef: el => { this._heroVideo = el; if (el) { const u = this.props.heroVideoUrl; if (u && !/claude\.ai/.test(u) && u !== "./assets/WANGO_Showreel.mp4") el.src = u; const pp = this.props.heroPosterUrl; if (pp && !/claude\.ai/.test(pp)) el.poster = pp; el.muted = true; const p = el.play(); if (p && p.catch) p.catch(() => {}); } },
+      tiltMove: e => {
+        const el = e.currentTarget, r = el.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - .5, py = (e.clientY - r.top) / r.height - .5;
+        el.style.transform = "perspective(900px) rotateY(" + (px * 9).toFixed(2) + "deg) rotateX(" + (-py * 9).toFixed(2) + "deg) translateY(-6px)";
+        el.style.boxShadow = (-px * 22).toFixed(0) + "px " + (18 + py * 10).toFixed(0) + "px 40px -14px rgba(14,102,85,.4)";
+      },
+      tiltLeave: e => { e.currentTarget.style.transform = ""; e.currentTarget.style.boxShadow = ""; },
+      categories, bestsellers, chips, lines, query,
+      stockGroups, offCount, offBadge: offCount ? offCount + " off" : "All in stock",
+      ownerMode: this.state.ownerMode,
+      logoTap: () => this.logoTap(),
+      kitchenClosed,
+      kitchenToggle: () => this.toggleKitchen(),
+      kitchenTitle: kitchenClosed ? "Kitchen is closed" : "Kitchen is open",
+      kitchenSub: kitchenClosed ? "Customers see a banner · ordering paused" : "Turn off to pause all ordering",
+      kitchenTrackBg: kitchenClosed ? "#B3261E" : "#016E5B",
+      kitchenKnobT: kitchenClosed ? "translateX(0)" : "translateX(20px)",
+      kitchenBoxBg: kitchenClosed ? "rgba(179,38,30,.06)" : "rgba(1,110,91,.06)",
+      kitchenBoxBorder: kitchenClosed ? "rgba(179,38,30,.25)" : "rgba(1,110,91,.18)",
+      adminOpen: () => this.openAdmin(),
+      pinOpen: this.state.pinOpen,
+      pinDots: (() => { const n = (this.props.ownerPin || "9061").trim().length; return Array.from({length:n}, (_,i) => ({ dotBg: i < this.state.pinEntry.length ? "#016E5B" : "transparent" })); })(),
+      pinErrMsg: this.state.pinError ? "Wrong PIN — try again" : "",
+      pinKeys: ["1","2","3","4","5","6","7","8","9"].map(k => ({ k, press: () => this.pinPress(k) })),
+      pinPressZero: () => this.pinPress("0"),
+      pinBack: () => this.pinBack(),
+      pinCancel: () => this.setState({ pinOpen: false, pinEntry: "", pinError: false }),
+      adminClose: () => this.setState({ admin: false }),
+      adminDrawerT: this.state.admin ? "translateX(0)" : "translateX(-102%)",
+      adminScrimO: this.state.admin ? 1 : 0, adminScrimPE: this.state.admin ? "auto" : "none",
+      empty: categories.length === 0,
+      reviews: REVIEWS.map((r, i) => ({
+        name: r.name,
+        initial: (r.name || "?").trim().charAt(0).toUpperCase(),
+        badge: r.badge || "",
+        showBadge: !!r.badge,
+        meta: "Google review · " + r.meta,
+        text: "“" + r.text + "”",
+      })),
+      reviewCount: REVIEWS.length + "+ reviews",
+      askLink: "https://wa.me/" + this.waNumber() + "?text=" + encodeURIComponent("Hi Wango! What's the price for "),
+      onSearch: e => this.setState({ query: e.target.value }),
+      jumpMenu: () => this.scrollTo("wg-menu"),
+      openCart: () => { if (this.state.stockOff.__kitchen) { window.alert("The kitchen is closed right now. Please try again soon!"); return; } this.setState({ open: true }); },
+      closeCart: () => this.setState({ open: false, step: "cart" }),
+      barT: count > 0 && !open && !kitchenClosed ? "translateY(0)" : "translateY(140%)",
+      barO: count > 0 && !open && !kitchenClosed ? 1 : 0,
+      drawerT: open ? "translateX(0)" : "translateX(102%)",
+      scrimO: open ? 1 : 0, scrimPE: open ? "auto" : "none",
+      stepTitle: details ? "Your details" : "Your order",
+      stepSub: details ? "So we can confirm on WhatsApp" : count ? count + " item" + (count === 1 ? "" : "s") + " · ready in 25–35 min" : "Nothing added yet",
+      isEmptyCart: count === 0, showLines: count > 0 && !details, isDetails: details && count > 0,
+      showFooter: count > 0,
+      subtotalLabel: rupee(t.subtotal), parcelLabel: rupee(t.parcel),
+      totalLabel: rupee(t.total),
+      isDelivery,
+      pickupBg: !isDelivery ? "#12211C" : "transparent", pickupFg: !isDelivery ? "#FBF7F0" : "#4B5A50",
+      deliveryBg: isDelivery ? "#12211C" : "transparent", deliveryFg: isDelivery ? "#FBF7F0" : "#4B5A50",
+      setPickup: () => this.setState({ mode: "pickup" }), setDelivery: () => this.setState({ mode: "delivery" }),
+      name: this.state.name, phone: this.state.phone, address: this.state.address, notes: this.state.notes,
+      onName: e => this.setState({ name: e.target.value }),
+      onPhone: e => this.setState({ phone: e.target.value }),
+      onAddress: e => this.setState({ address: e.target.value }),
+      onNotes: e => this.setState({ notes: e.target.value }),
+      primaryLabel: details ? (ready ? "Send order on WhatsApp" : "Fill your name & phone") : "Continue to details",
+      primaryBg: details ? (ready ? "#25D366" : "#DCD6CA") : "#FFA717",
+      primaryFg: details && ready ? "#06301C" : details ? "#8A8375" : "#12211C",
+      primaryAction: details
+        ? () => { if (ready) window.open(this.waLink(), "_blank"); }
+        : () => this.setState({ step: "details" }),
+      footNote: details
+        ? "Delivery is charged at actual Rapido rates at pickup — the figure above is an estimate."
+        : "Next: name, phone and pickup or delivery.",
+    };
+  }
+}
+</script>
+</body>
+</html>
