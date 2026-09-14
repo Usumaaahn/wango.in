@@ -17,6 +17,17 @@
 <meta name="ext-resource-dependency" content="./assets/dish-mango-sago.jpg" data-resource-id="photoTt1">
 <meta name="ext-resource-dependency" content="./assets/dish-cheesecake.png" data-resource-id="photoDes6">
 <meta name="ext-resource-dependency" content="./assets/dish-sticky-rice.png" data-resource-id="photoDes3">
+<meta name="ext-resource-dependency" content="./assets/review-anuja-photo.webp" data-resource-id="revAnujaPhoto">
+<meta name="ext-resource-dependency" content="./assets/review-anuja-profile.png" data-resource-id="revAnujaProfile">
+<meta name="ext-resource-dependency" content="./assets/review-vishnu-photo.webp" data-resource-id="revVishnuPhoto">
+<meta name="ext-resource-dependency" content="./assets/review-vishnu-profile.png" data-resource-id="revVishnuProfile">
+<meta name="ext-resource-dependency" content="./assets/review-halima-photo.webp" data-resource-id="revHalimaPhoto">
+<meta name="ext-resource-dependency" content="./assets/review-halima-profile.png" data-resource-id="revHalimaProfile">
+<meta name="ext-resource-dependency" content="./assets/review-sarath-1.webp" data-resource-id="revSarath1">
+<meta name="ext-resource-dependency" content="./assets/review-sarath-2.webp" data-resource-id="revSarath2">
+<meta name="ext-resource-dependency" content="./assets/review-sarath-profile.png" data-resource-id="revSarathProfile">
+<meta name="ext-resource-dependency" content="./assets/review-yuka-photo.webp" data-resource-id="revYukaPhoto">
+<meta name="ext-resource-dependency" content="./assets/review-hari-profile.png" data-resource-id="revHariProfile">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
@@ -193,10 +204,10 @@
   <div data-reveal-skip="" style="position:relative;margin-top:34px;padding:16px 0;background:linear-gradient(90deg,#016E5B,#025A48 45%,#016E5B);overflow:hidden;transform:rotate(-1.2deg);box-shadow:0 20px 44px -20px rgba(14,102,85,.55)">
     <div class="wg-marquee-track">
       <div style="display:flex;align-items:center;gap:34px;padding-right:34px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;color:#FBF7F0;white-space:nowrap">
-        <span>365 DAYS OF MANGO</span><span style="color:#FFD626">✺</span><span>CARBIDE-FREE · NATURALLY RIPENED</span><span style="color:#FFD626">✺</span><span>MADE TO ORDER</span><span style="color:#FFD626">✺</span><span>DELIVERED FRESH ACROSS INDIA</span><span style="color:#FFD626">✺</span><span>THE MANGO CLUB</span><span style="color:#FFD626">✺</span>
+        <span>365 DAYS OF MANGO</span><span style="color:#FFD626">✺</span><span>CARBIDE-FREE · NATURALLY RIPENED</span><span style="color:#FFD626">✺</span><span>MADE TO ORDER</span><span style="color:#FFD626">✺</span><span>HANDCRAFTED FRESH EVERY DAY</span><span style="color:#FFD626">✺</span><span>THE MANGO CLUB</span><span style="color:#FFD626">✺</span>
       </div>
       <div style="display:flex;align-items:center;gap:34px;padding-right:34px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em;color:#FBF7F0;white-space:nowrap" aria-hidden="true">
-        <span>365 DAYS OF MANGO</span><span style="color:#FFD626">✺</span><span>CARBIDE-FREE · NATURALLY RIPENED</span><span style="color:#FFD626">✺</span><span>MADE TO ORDER</span><span style="color:#FFD626">✺</span><span>DELIVERED FRESH ACROSS INDIA</span><span style="color:#FFD626">✺</span><span>THE MANGO CLUB</span><span style="color:#FFD626">✺</span>
+        <span>365 DAYS OF MANGO</span><span style="color:#FFD626">✺</span><span>CARBIDE-FREE · NATURALLY RIPENED</span><span style="color:#FFD626">✺</span><span>MADE TO ORDER</span><span style="color:#FFD626">✺</span><span>HANDCRAFTED FRESH EVERY DAY</span><span style="color:#FFD626">✺</span><span>THE MANGO CLUB</span><span style="color:#FFD626">✺</span>
       </div>
     </div>
   </div>
@@ -305,16 +316,16 @@
         </div>
         <a href="https://www.google.com/search?q=Wango+The+Mango+Club+Bengaluru+reviews" target="_blank" rel="noopener" style="padding:10px 18px;border-radius:999px;border:1.5px solid rgba(255,255,255,.32);color:#fff;font-weight:600;font-size:13.5px;white-space:nowrap;transition:border-color .18s ease" style-hover="border-color:#FFD626;color:#FFD626">Read all on Google →</a>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px">
-        <sc-for list="{{ reviews }}" as="rev" hint-placeholder-count="4">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,340px));justify-content:center;gap:16px">
+        <sc-for list="{{ reviews }}" as="rev" hint-placeholder-count="1">
           <div style="position:relative;background:rgba(255,255,255,.1);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:8px;box-shadow:0 12px 30px -16px rgba(0,0,0,.4)">
             <div style="color:#FFD626;font-size:14px;letter-spacing:2px">★★★★★</div>
             
-            <p style="margin:0;font-size:14.5px;line-height:1.5;color:#fff">{{ rev.text }}</p><div style="display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:6px">
-              <div style="width:36px;height:36px;border-radius:50%;flex:0 0 auto;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#FFD626,#FFA717);color:#12211C;font-weight:700;font-size:15px;font-family:'Bricolage Grotesque',sans-serif">{{ rev.initial }}</div>
-              <div>
-                <div style="display:flex;align-items:center;gap:8px"><span style="font-size:12.5px;color:#fff;font-weight:600">{{ rev.name }}</span><sc-if value="{{ rev.showBadge }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;font-weight:700;letter-spacing:.06em;padding:2px 7px;border-radius:999px;background:rgba(255,201,51,.18);color:#FFD626">{{ rev.badge }}</span></sc-if></div>
-                <div style="font-size:12px;color:rgba(255,255,255,.6)">{{ rev.meta }}</div>
+            <p style="margin:0;font-size:14.5px;line-height:1.5;color:#fff">{{ rev.text }}</p><sc-if value="{{ rev.hasPhoto }}" hint-placeholder-val="{{ false }}"><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));gap:8px"><sc-for list="{{ rev.photos }}" as="ph" hint-placeholder-count="1"><img src="{{ ph }}" alt="" loading="lazy" style="width:100%;height:150px;object-fit:cover;border-radius:14px;border:1px solid rgba(255,255,255,.18)"></sc-for></div></sc-if><div style="display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:6px">
+              <sc-if value="{{ rev.hasProfile }}" hint-placeholder-val="{{ false }}"><img src="{{ rev.profile }}" alt="{{ rev.name }}" style="width:38px;height:38px;border-radius:50%;flex:0 0 auto;object-fit:cover;border:2px solid rgba(255,255,255,.35)"></sc-if><sc-if value="{{ rev.noProfile }}" hint-placeholder-val="{{ true }}"><div style="width:38px;height:38px;border-radius:50%;flex:0 0 auto;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#FFD626,#FFA717);color:#12211C;font-weight:700;font-size:15px;font-family:'Bricolage Grotesque',sans-serif">{{ rev.initial }}</div></sc-if>
+              <div style="flex:1;min-width:0">
+                <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="font-size:12.5px;color:#fff;font-weight:600">{{ rev.name }}</span><sc-if value="{{ rev.showBadge }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;font-weight:700;letter-spacing:.06em;padding:2px 7px;border-radius:999px;background:rgba(255,201,51,.18);color:#FFD626">{{ rev.badge }}</span></sc-if></div>
+                <div style="font-size:12px;line-height:1.4;color:rgba(255,255,255,.6);margin-top:3px">{{ rev.meta }}</div>
               </div>
             </div>
           </div>
@@ -440,8 +451,14 @@ const PHOTO_FILES = {
   app2: "./assets/dish-quesadilla.jpg", app8: "./assets/dish-momos.jpg",
   sh1: "./assets/dish-jackmanco.jpg", tt1: "./assets/dish-mango-sago.jpg",
   des6: "./assets/dish-cheesecake.png", des3: "./assets/dish-sticky-rice.png",
+  revAnujaPhoto: "./assets/review-anuja-photo.webp", revAnujaProfile: "./assets/review-anuja-profile.png",
+  revVishnuPhoto: "./assets/review-vishnu-photo.webp", revVishnuProfile: "./assets/review-vishnu-profile.png",
+  revHalimaPhoto: "./assets/review-halima-photo.webp", revHalimaProfile: "./assets/review-halima-profile.png",
+  revSarath1: "./assets/review-sarath-1.webp", revSarath2: "./assets/review-sarath-2.webp", revSarathProfile: "./assets/review-sarath-profile.png",
+  revYukaPhoto: "./assets/review-yuka-photo.webp",
+  revHariProfile: "./assets/review-hari-profile.png",
 };
-const PHOTO_RES = { des4:"photoDes4", des1:"photoDes1", app2:"photoApp2", app8:"photoApp8", sh1:"photoSh1", tt1:"photoTt1", des6:"photoDes6", des3:"photoDes3" };
+const PHOTO_RES = { des4:"photoDes4", des1:"photoDes1", app2:"photoApp2", app8:"photoApp8", sh1:"photoSh1", tt1:"photoTt1", des6:"photoDes6", des3:"photoDes3", revAnujaPhoto:"revAnujaPhoto", revAnujaProfile:"revAnujaProfile", revVishnuPhoto:"revVishnuPhoto", revVishnuProfile:"revVishnuProfile", revHalimaPhoto:"revHalimaPhoto", revHalimaProfile:"revHalimaProfile", revSarath1:"revSarath1", revSarath2:"revSarath2", revSarathProfile:"revSarathProfile", revYukaPhoto:"revYukaPhoto", revHariProfile:"revHariProfile" };
 const photoUrl = id => {
   const r = typeof window !== "undefined" && window.__resources;
   if (r && PHOTO_RES[id] && r[PHOTO_RES[id]]) return r[PHOTO_RES[id]];
@@ -524,14 +541,12 @@ const MENU = [
 ];
 
 const REVIEWS = [
-  { name:"Vaishnavi S. Bijley", badge:"LOCAL GUIDE", meta:"Recommends the Tiramisu", text:"Ordered a Mango Tiramisu via WhatsApp — smooth, creamy, fresh mango and not overly sweet. Seamless ordering, prompt communication, on-time delivery, packaging intact." },
-  { name:"Leandra George", meta:"Food, Service & Atmosphere 5/5", text:"One of the best cafes in Bangalore. Very cute place to hang out with friends! So many varieties of mango desserts — their Tres Leches, Cheesecakes and Tiramisu are heavenly. The Mango Salsa is a must-try!" },
-  { name:"Aditya Rao", meta:"Mango dessert lover", text:"Tried a few of their mango desserts and honestly everything was so fresh, creamy, and perfectly balanced. Beautiful presentation, not overly sweet, and the ambience is super cute and aesthetic." },
-  { name:"Sneha Kulkarni", badge:"LOCAL GUIDE", meta:"Recommends the Sticky Rice", text:"The Mango Sticky Rice tastes exactly like the ones I had in Thailand. You can tell the mangoes are real and ripe, not artificial. Will keep coming back all season." },
-  { name:"Rohit Menon", meta:"Ordered for a birthday", text:"Got a bulk order of desserts for a birthday and everyone was blown away. The team was super responsive on WhatsApp and everything arrived fresh and neatly packed." },
-  { name:"Priya Nair", meta:"First-time visitor", text:"Finally a café that does mango all year round! The Jackmanco shake is unreal and the Aam Panna took me straight back to childhood. Cozy little spot too." },
-  { name:"Karthik Iyer", meta:"Cheesecake fan", text:"Mango cheesecake was the highlight — rich but light, and the mango flavour is front and centre. Prices are honest for the quality. Highly recommend." },
-  { name:"Meghana D.", badge:"LOCAL GUIDE", meta:"Food & Atmosphere 5/5", text:"Aesthetic interiors, friendly staff, and every single mango item we tried was fresh. The Tres Leches melts in your mouth. My new favourite dessert stop in the city." },
+  { name:"Halima Sadiya Mushtaq", imgs:["revHalimaPhoto"], profile:"revHalimaProfile", badge:"LOCAL GUIDE", meta:"22 reviews · 33 photos · 5/5 · ₹200–400", text:"Tried a few of their mango desserts and honestly everything was so fresh, creamy, and perfectly balanced 🥭 The presentation was beautiful and every dessert felt well thought out instead of overly sweet. The ambience is also super cute and aesthetic, perfect for dessert dates and content creators. Definitely a must visit!" },
+  { name:"Sarath Gopal", imgs:["revSarath1","revSarath2"], profile:"revSarathProfile", badge:"LOCAL GUIDE", meta:"32 reviews · 251 photos · 5/5 · Dine in", text:"Wango Café in Indiranagar is an absolute gem for anyone who's obsessed with mangoes! From the moment you walk in, the tropical vibe hits you — bright, cheerful interiors and the heavenly aroma of fresh mango everywhere." },
+  { name:"宍戸ゆうか", imgs:["revYukaPhoto"], meta:"5 reviews · 2 photos · 5/5 · Dine in", text:"The staff were very kind, and the mango smoothie was delicious!! The price was also reasonable, and I would definitely like to visit again when I come to India! (The smoothie doesn't have cream on it, but it's still delicious.)" },
+  { name:"Vishnu Naik", imgs:["revVishnuPhoto"], profile:"revVishnuProfile", badge:"LOCAL GUIDE", meta:"24 reviews · 7 photos · 5/5 · ₹200–400", text:"Must visit for the sticky rice! One suggestion: encourage your customers to leave a Google review. The quality of the food and the service you provide deserve much more recognition." },
+  { name:"Hari Ram Thiruvilwamala", imgs:[], profile:"revHariProfile", badge:"LOCAL GUIDE", meta:"8 reviews · 5/5", text:"Wango is just the best one stop space for all mango lovers. The initial welcoming atmosphere of the overall space will definitely steal your heart as the interiors are so classy, neat, organised and cozy. And next comes the delicious set of menu and mango variants which will surely make you puzzle up with your decision." },
+  { name:"Anuja Sharma", imgs:["revAnujaPhoto"], profile:"revAnujaProfile", badge:"LOCAL GUIDE", meta:"11 reviews · 14 photos · 5/5", text:"An excellent place. Every dish has mango — enjoyed the Jack-Man-Co jackfruit, tender coconut and mango shake, it was different and delicious. The Mango Quesadilla was healthy in whole wheat and had a delicious filling." },
 ];
 
 const ALL = {};
@@ -805,10 +820,12 @@ class Component extends DCLogic {
         initial: (r.name || "?").trim().charAt(0).toUpperCase(),
         badge: r.badge || "",
         showBadge: !!r.badge,
-        meta: "Google review · " + r.meta,
+        meta: r.meta,
         text: "“" + r.text + "”",
+        photos: (r.imgs || []).map(photoUrl).filter(Boolean), hasPhoto: !!(r.imgs || []).map(photoUrl).filter(Boolean).length,
+        profile: photoUrl(r.profile), hasProfile: !!photoUrl(r.profile), noProfile: !photoUrl(r.profile),
       })),
-      reviewCount: REVIEWS.length + "+ reviews",
+      reviewCount: "236+ reviews",
       askLink: "https://wa.me/" + this.waNumber() + "?text=" + encodeURIComponent("Hi Wango! What's the price for "),
       onSearch: e => this.setState({ query: e.target.value }),
       jumpMenu: () => this.scrollTo("wg-menu"),
